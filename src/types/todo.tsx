@@ -1,6 +1,6 @@
 type Todo = {
-    id: number
-    text: string,
+    id: string
+    title: string,
     completed: boolean
 }
 export default Todo;

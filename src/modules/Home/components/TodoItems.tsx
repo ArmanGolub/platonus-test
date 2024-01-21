@@ -8,23 +8,13 @@ import { todoApi } from '../../../api/todoApi';
 type Props = {}
 
 const TodoItems = (props: Props) => {
-    const [deleteTodos, {}] = todoApi.useDeleteTodosMutation()
+    const { data: todos, error, isLoading, refetch } = todoApi.useGetTodosQuery()
 
-    // const storetodos = useAppSelector(state => state.todos.todos);
-    const {data: todos, error, isLoading, refetch} =  todoApi.useGetTodosQuery()
-    const handleRemove = (todo: Todo) => {
-        // todos?.findIndex((element, index) => {
-        //     if (element.id == todo.id){
-        //         deleteTodos(index)
-        //     } 
-        // })
-        deleteTodos(todo.id)
-    }
 
-    return (        
+    return (
         <div>
-            {todos && todos.map(item => {return (<TodoItem todo={item} handleRemove={handleRemove} key={item.id}></TodoItem>)})}
-        </div>  
+            {todos && todos.map(item => { return (<TodoItem todo={item} key={item.id}></TodoItem>) })}
+        </div>
     )
 }
 
