@@ -14,4 +14,3 @@ npm i
 npm run server
 npm run dev
 ```
-server and dev must be running on different terminal sessions
