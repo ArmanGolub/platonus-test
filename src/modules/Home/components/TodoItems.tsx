@@ -1,8 +1,5 @@
 import React from 'react'
 import TodoItem from './TodoItem'
-import { useAppSelector } from '../../../hooks';
-import { useState } from 'react';
-import Todo from '../../../types/todo';
 import { todoApi } from '../../../api/todoApi';
 
 type Props = {}
